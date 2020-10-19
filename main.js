@@ -77,11 +77,11 @@ class BasicWorldDemo {
         var loader1 = new THREE.FontLoader();
         console.log(this)
 
-        var fuckMeHard = this._scene;
+        var object = this._scene;
 
         loader1.load('fonts/helvetiker_regular.typeface.json', (font) => {
 
-          var geometry = new THREE.TextGeometry('Skylines One LLC is running! Mutter ficker!', {
+          var geometry = new THREE.TextGeometry('Skybox World brought to you by Skylines One LLC', {
             font: font,
             size: 40,
             height: 2,
@@ -99,7 +99,7 @@ class BasicWorldDemo {
           const obj = new THREE.Mesh(geometry,material);
           obj.position.set(0, 3.0, 0)
 
-          fuckMeHard.add(obj)
+          object.add(obj)
         });
 
         /*const plane = new THREE.Mesh(
@@ -151,22 +151,7 @@ class BasicWorldDemo {
         this._RAF();
     }
 
-    _fuckUHardCoreJSIHateU(font) {
-
-        var geometry = new THREE.TextGeometry('Hello three.js!', {
-            font: font,
-            size: 80,
-            height: 5,
-            curveSegments: 12,
-            bevelEnabled: true,
-            bevelThickness: 10,
-            bevelSize: 8,
-            bevelOffset: 0,
-            bevelSegments: 5
-        });
-        console.log(this)
-        this._scene.add(geometry)
-    }
+    
 
     _OnWindowResize() {
         this._camera.aspect = window.innerWidth / window.innerHeight;
